@@ -22,7 +22,7 @@ fun main() {
     val arrayList = arrayListOf("Patrick", "Michael", "Sarah")
     // Appends a new value to the end of our arrayList
     arrayList.add("Steve")
-    // Adds a new value at the selected position within our arrayyList
+    // Adds a new value at the selected position within our arrayList
     arrayList.add(1, "Bob")
 
     println(arrayList)
