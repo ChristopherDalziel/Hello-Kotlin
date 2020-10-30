@@ -17,4 +17,8 @@ fun main() {
 
     // While loops can be used on variables/objects like the following below - this is where they're most powerful
     // while(user.isOnline()) {}
+
+    // while (input != "quit") {
+    //    println("You typed $input")
+    //}
 }
