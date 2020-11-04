@@ -9,7 +9,7 @@ fun main() {
                 println(char)
             }
         }
-        // This line provides breaks
+        // This line provides the breaks
         println()
     }
 }
