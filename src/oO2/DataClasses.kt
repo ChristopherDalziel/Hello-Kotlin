@@ -26,6 +26,7 @@ fun main() {
     // Hashing, hash sets and methods
     // In a set you cannot have duplicates, so if we print this it will return a set with only two elements, another pro of data classes.
     val set = hashSetOf(dataBook, dataBook2, dataBook3)
+    val copy = dataBook.copy(title = "Another Book")
 
     // The normal class will print out the package we're in, the name of the class and then the memory usage number.
     println(book)
@@ -36,4 +37,6 @@ fun main() {
     println(book == book2)
     println(dataBook3)
     println(title + author + price)
+    println(set)
+    println(copy)
 }
