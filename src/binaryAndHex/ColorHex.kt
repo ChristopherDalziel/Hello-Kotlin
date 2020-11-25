@@ -1,7 +1,7 @@
 package binaryAndHex
 
 // This wasn't possible in our previous enum class, but here we can use enums in combination with hexadecimal numbers to display colors.
-enum class Color(rgb: Int) {
+enum class ColorHex(rgb: Int) {
     RED(0xFF0000), GREEN(0x00FF00), BLUE(0x0000FF), YELLOW(0xFFFF00)
 }
 
