@@ -1,6 +1,6 @@
 package oO3
 
-class Animal {
+open class Animal {
     // In Kotlin this is a property, in Java this is a field
     // Defining a property also creates getters and setters
     var age: Int = 0
