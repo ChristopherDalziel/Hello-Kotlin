@@ -8,6 +8,8 @@ package oO3
 // <E> is an element type, so in this example we're having a Stack OF an ELEMENT. This is because our push/pop methods are not dependent on a certain element type.
 // Stack <E> is what makes our class Generic and repeatable.
 // vararg = variable number of arguments
+
+// Generic class
 class Stack<E>(vararg val items: E) {
 
     // Returns the vararg items as a list
@@ -29,11 +31,23 @@ class Stack<E>(vararg val items: E) {
     }
 }
 
+// Generic function
+fun <T>stackOf(vararg  elements: T) : Stack<T> {
+    // * operator destructors our elements from an array
+    return Stack(*elements)
+}
+
 fun main() {
     val stack = Stack(3, 5, 2, 8)
+    val stack2 = stackOf("hi", "hello", "hey")
+
     println(stack.pop())
     println(stack.pop())
     println(stack.pop())
     println(stack.pop())
     println(stack.pop())
+
+    for(i in 1..3) {
+        println(stack2.pop())
+    }
 }
