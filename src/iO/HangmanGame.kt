@@ -21,26 +21,43 @@ fun main() {
     val letters = word.toLowerCase().toCharArray().toHashSet()
 
     // Users correct guesses a mutable list can have new items added and removed from it
-    val correctGuesses = mutableListOf<Char>()
+    val correctGuesses = mutableSetOf<Char>()
 
 
     // Wrong guesses
-    val fails = 0
+    var fails = 0
 
     // What do we do while the user hasn't guessed the complete word
     while (letters != correctGuesses) {
         // Print the word that has been guessed so far
+        printExploredWord(word, correctGuesses)
+        println("#Wrong guesses: $fails\n")
 
+        print("Guess letter: ")
+        val input = readLine()
+
+        if(input == null) {
+            // If the input is null jump back and ask for an input again
+            continue
+        } else if (input.length != 1) {
+            // If the input is multiple letters, ask for an input again
+            println("Please enter a single letter")
+            continue
+        }
+
+        if(word.toLowerCase().contains(input.toLowerCase())) {
+            correctGuesses.add(input[0].toLowerCase())
+        } else {
+            fails++
+        }
     }
 
     println("#Wrong guesses: $fails\n\n")
-    println("..Well done!")
-
-    printExploredWord("Hello", mutableSetOf('L'))
+    println("Congratulations the word was $word, you WIN!")
 }
 
 
-fun printExploredWord(word: String, correctGuesses: Set<Char>) {
+fun printExploredWord(word: String, correctGuesses: MutableSet<Char>) {
     for(character in word.toLowerCase()) {
         if(correctGuesses.contains(character)) {
             print("$character ")
