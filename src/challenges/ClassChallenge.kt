@@ -1,4 +1,4 @@
-package Challenges
+package challenges
 
 private class Book(val title: String, val author: String, val publicationYear: Int, var borrowed: Boolean) {
     init {
